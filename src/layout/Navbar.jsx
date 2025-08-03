@@ -13,7 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import ChangeHistoryIcon from "@mui/icons-material/ChangeHistory";
 
-const pages = ["Search", "Explore", "Blog"];
+const pages = ["Search", "Explore", "Login"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = () => {
@@ -78,10 +78,11 @@ const Navbar = () => {
                                 href="#app-bar-with-responsive-menu"
                                 sx={{
                                     fontFamily: "Noto Sans",
-                                    fontWeight: 700,
-                                    letterSpacing: ".3rem",
+                                    fontWeight: "bold",
+                                    letterSpacing: ".05rem",
                                     color: "inherit",
                                     textDecoration: "none",
+                                    fontStyle: "italic",
                                 }}
                             >
                                 WEDGE
@@ -132,10 +133,11 @@ const Navbar = () => {
                                 href="#app-bar-with-responsive-menu"
                                 sx={{
                                     fontFamily: "Noto Sans",
-                                    fontWeight: 700,
-                                    letterSpacing: ".3rem",
+                                    fontWeight: "bold",
+                                    letterSpacing: ".05rem",
                                     color: "inherit",
                                     textDecoration: "none",
+                                    fontStyle: "italic",
                                 }}
                             >
                                 WEDGE
@@ -161,6 +163,25 @@ const Navbar = () => {
                                         display: "block",
                                         fontFamily: "Noto Sans",
                                         fontWeight: "bold",
+                                        textTransform: "none",
+                                        border:
+                                            page === "Login"
+                                                ? "2px solid #659df2"
+                                                : "none",
+                                        padding:
+                                            page === "Login"
+                                                ? "0.2em 1.2em"
+                                                : "",
+                                        borderRadius: "14px",
+                                        transition: "all 0.3s ease",
+                                        "&:hover":
+                                            page === "Login"
+                                                ? {
+                                                      backgroundColor:
+                                                          "#659df2",
+                                                      color: "white",
+                                                  }
+                                                : {},
                                     }}
                                 >
                                     {page}
