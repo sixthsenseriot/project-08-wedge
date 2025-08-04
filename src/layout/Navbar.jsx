@@ -173,13 +173,12 @@ const Navbar = () => {
                                                 ? "0.2em 1.2em"
                                                 : "",
                                         borderRadius: "14px",
-                                        transition: "all 0.3s ease",
+                                        transition: "all 0.3s ease-in-out",
                                         "&:hover":
                                             page === "Login"
                                                 ? {
                                                       backgroundColor:
-                                                          "#659df2",
-                                                      color: "white",
+                                                          "#659df263",
                                                   }
                                                 : {},
                                     }}

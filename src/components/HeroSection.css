@@ -1,0 +1,27 @@
+.HeroSection {
+    margin: 180px 0;
+}
+
+.hero-caption,
+.hero-header {
+    text-align: center;
+}
+
+.hero-caption {
+    font-size: 1.2em;
+}
+
+.hero-header {
+    font-size: 3em;
+    margin-top: 0;
+    word-spacing: 0.2rem;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.hero-button-container {
+    display: flex;
+    justify-content: center;
+}
