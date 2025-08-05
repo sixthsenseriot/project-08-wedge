@@ -1,12 +1,12 @@
 import { Grid, Box, Typography } from "@mui/material";
 import ProfileCard from "../components/ProfileCard";
-import Navbar from "../layout/HomeNavbar";
+import SideNavbar from "../layout/SideNavbar";
 
-const Profile = () => {
+const ProfilePage = () => {
     return (
         <Grid container>
             <Grid item xs={2}>
-                <Navbar />
+                <SideNavbar />
             </Grid>
             <Grid item xs={8}>
                 <ProfileCard />
@@ -24,4 +24,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default ProfilePage;

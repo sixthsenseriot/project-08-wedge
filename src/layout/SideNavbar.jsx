@@ -17,7 +17,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { supabase } from "../client";
 
-const HomeNavbar = () => {
+const SideNavbar = () => {
     const navigate = useNavigate();
 
     const handleLogout = async () => {
@@ -50,6 +50,10 @@ const HomeNavbar = () => {
                         key={item.text}
                         component={Link}
                         to={item.route}
+                        sx={{
+                            textDecoration: "none",
+                            color: "inherit",
+                        }}
                     >
                         <ListItemIcon>{item.icon}</ListItemIcon>
                         <ListItemText primary={item.text} />
@@ -66,4 +70,4 @@ const HomeNavbar = () => {
     );
 };
 
-export default HomeNavbar;
+export default SideNavbar;

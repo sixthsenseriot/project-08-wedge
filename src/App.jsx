@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./layout/MainPageNavbar";
-import MainPage from "./pages/MainPage";
 import AuthPage from "./pages/AuthPage";
-import Profile from "./pages/Profile";
+import HomePage from "./pages/HomePage";
+import MainPage from "./pages/MainPage";
+import PostPage from "./pages/PostPage";
+import ProfilePage from "./pages/ProfilePage";
 
 import "./App.css";
 
@@ -12,9 +14,11 @@ const App = () => {
         <Router>
             <div className="App">
                 <Routes>
-                    <Route path="/" element={<MainPage />} />
                     <Route path="/auth" element={<AuthPage />} />
-                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/home" element={<HomePage />} />
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="/post" element={<PostPage />} />
+                    <Route path="/profile" element={<ProfilePage />} />
                 </Routes>
             </div>
         </Router>

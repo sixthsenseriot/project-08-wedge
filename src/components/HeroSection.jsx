@@ -15,6 +15,7 @@ const HeroSection = () => {
             </h1>
             <div className="hero-button-container">
                 <Button
+                    href="/"
                     sx={{
                         textTransform: "none",
                         backgroundColor: "#659df2",
@@ -33,6 +34,7 @@ const HeroSection = () => {
                     Explore Experiences
                 </Button>
                 <Button
+                    href="/"
                     sx={{
                         textTransform: "none",
                         color: "black",
