@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import * as React from "react";
 
 import AppBar from "@mui/material/AppBar";
@@ -14,12 +16,24 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import ChangeHistoryIcon from "@mui/icons-material/ChangeHistory";
 
-import { useNavigate } from "react-router-dom";
+import {
+    mobileContainerSx,
+    mobileLogoContainerSx,
+    mobileLogoIconSx,
+    mobileLogoTextSx,
+    desktopContainerSx,
+    desktopLogoContainerSx,
+    desktopLogoIconSx,
+    desktopLogoTextSx,
+    desktopNavButtonsContainerSx,
+    desktopNavButtonsSx,
+    getDesktopNavButtonsSx,
+} from "./MainPageNavbar.styles";
 
 const pages = ["Search", "Explore", "Login"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const Navbar = () => {
+const MainPageNavbar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -39,17 +53,16 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     return (
-        <AppBar position="static" color="black" elevation={0}>
+        <AppBar
+            position="static"
+            color="black"
+            elevation={0}
+            className="MainPageNavbar"
+        >
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{ position: "relative" }}>
                     {/* === MOBILE LAYOUT === */}
-                    <Box
-                        sx={{
-                            display: { xs: "flex", md: "none" },
-                            width: "100%",
-                            alignItems: "center",
-                        }}
-                    >
+                    <Box sx={mobileContainerSx} className="mobile-container">
                         {/* === MOBILE: Hamburger menu (left) === */}
                         <IconButton
                             size="large"
@@ -65,30 +78,16 @@ const Navbar = () => {
 
                         {/* === MOBILE: Logo (center) === */}
                         <Box
-                            sx={{
-                                position: "absolute",
-                                left: "50%",
-                                transform: "translateX(-50%)",
-                                display: "flex",
-                                alignItems: "center",
-                            }}
+                            sx={mobileLogoContainerSx}
+                            className="mobile-logo-container"
                         >
-                            <ChangeHistoryIcon
-                                sx={{ mr: 1, color: "#659df2" }}
-                            />
+                            <ChangeHistoryIcon sx={mobileLogoIconSx} />
                             <Typography
                                 variant="h5"
                                 noWrap
                                 component="a"
                                 href="#app-bar-with-responsive-menu"
-                                sx={{
-                                    fontFamily: "Noto Sans",
-                                    fontWeight: "bold",
-                                    letterSpacing: ".05rem",
-                                    color: "inherit",
-                                    textDecoration: "none",
-                                    fontStyle: "italic",
-                                }}
+                                sx={mobileLogoTextSx}
                             >
                                 WEDGE
                             </Typography>
@@ -113,37 +112,19 @@ const Navbar = () => {
                     {/* ======================================================================== */}
 
                     {/* === DESKTOP LAYOUT === */}
-                    <Box
-                        sx={{
-                            display: { xs: "none", md: "flex" },
-                            width: "100%",
-                            alignItems: "center",
-                        }}
-                    >
+                    <Box sx={desktopContainerSx} className="desktop-container">
                         {/* === DESKTOP: Logo (left) === */}
                         <Box
-                            sx={{
-                                display: "flex",
-                                alignItems: "center",
-                                mr: 2,
-                            }}
+                            sx={desktopLogoContainerSx}
+                            className="desktop-logo-container"
                         >
-                            <ChangeHistoryIcon
-                                sx={{ mr: 1, color: "#659df2" }}
-                            />
+                            <ChangeHistoryIcon sx={desktopLogoIconSx} />
                             <Typography
                                 variant="h6"
                                 noWrap
                                 component="a"
                                 href="/"
-                                sx={{
-                                    fontFamily: "Noto Sans",
-                                    fontWeight: "bold",
-                                    letterSpacing: ".05rem",
-                                    color: "inherit",
-                                    textDecoration: "none",
-                                    fontStyle: "italic",
-                                }}
+                                sx={desktopLogoTextSx}
                             >
                                 WEDGE
                             </Typography>
@@ -151,12 +132,8 @@ const Navbar = () => {
 
                         {/* === DESKTOP: Nav buttons and profile picture (right) === */}
                         <Box
-                            sx={{
-                                ml: "auto",
-                                display: "flex",
-                                alignItems: "center",
-                                gap: 2,
-                            }}
+                            sx={desktopNavButtonsContainerSx}
+                            className="desktop-nav-buttons-container"
                         >
                             {pages.map((page) => {
                                 const route =
@@ -170,31 +147,7 @@ const Navbar = () => {
                                             handleCloseNavMenu();
                                             navigate(route);
                                         }}
-                                        sx={{
-                                            my: 2,
-                                            color: "black",
-                                            display: "block",
-                                            fontFamily: "Noto Sans",
-                                            fontWeight: "bold",
-                                            textTransform: "none",
-                                            border:
-                                                page === "Login"
-                                                    ? "2px solid #659df2"
-                                                    : "none",
-                                            padding:
-                                                page === "Login"
-                                                    ? "0.2em 1.2em"
-                                                    : "",
-                                            borderRadius: "14px",
-                                            transition: "all 0.3s ease-in-out",
-                                            "&:hover":
-                                                page === "Login"
-                                                    ? {
-                                                          backgroundColor:
-                                                              "#659df263",
-                                                      }
-                                                    : {},
-                                        }}
+                                        sx={getDesktopNavButtonsSx(page)}
                                     >
                                         {page}
                                     </Button>
@@ -288,4 +241,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default MainPageNavbar;
