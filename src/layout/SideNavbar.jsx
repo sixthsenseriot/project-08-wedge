@@ -18,6 +18,8 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ChangeHistoryIcon from "@mui/icons-material/ChangeHistory";
 
+import "./SideNavbar.css";
+
 import { supabase } from "../client";
 
 const SideNavbar = () => {
