@@ -7,6 +7,7 @@ import {
     ListItemIcon,
     ListItemText,
     IconButton,
+    Typography,
 } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
@@ -15,6 +16,8 @@ import BookmarkIcon from "@mui/icons-material/Bookmark";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
+import ChangeHistoryIcon from "@mui/icons-material/ChangeHistory";
+
 import { supabase } from "../client";
 
 const SideNavbar = () => {
@@ -26,7 +29,7 @@ const SideNavbar = () => {
     };
 
     const navItems = [
-        { text: "Home", icon: <HomeIcon />, route: "/" },
+        { text: "Home", icon: <HomeIcon />, route: "/home" },
         { text: "Profile", icon: <PersonIcon />, route: "/profile" },
         { text: "Search", icon: <SearchIcon />, route: "/search" },
         { text: "Bookmarks", icon: <BookmarkIcon />, route: "/bookmarks" },
@@ -43,10 +46,35 @@ const SideNavbar = () => {
                 padding: 2,
             }}
         >
+            <Box
+                sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    padding: "0.8em 1em",
+                }}
+            >
+                <ChangeHistoryIcon sx={{ mr: 1, color: "#659df2" }} />
+                <Typography
+                    variant="h6"
+                    noWrap
+                    component="a"
+                    href="/"
+                    sx={{
+                        fontFamily: "Noto Sans",
+                        fontWeight: "bold",
+                        letterSpacing: ".05rem",
+                        color: "inherit",
+                        textDecoration: "none",
+                        fontStyle: "italic",
+                    }}
+                >
+                    WEDGE
+                </Typography>
+            </Box>
             <List>
                 {navItems.map((item) => (
                     <ListItem
-                        button
+                        button="true"
                         key={item.text}
                         component={Link}
                         to={item.route}
@@ -59,7 +87,7 @@ const SideNavbar = () => {
                         <ListItemText primary={item.text} />
                     </ListItem>
                 ))}
-                <ListItem button onClick={handleLogout}>
+                <ListItem button="true" onClick={handleLogout}>
                     <ListItemIcon>
                         <LogoutIcon />
                     </ListItemIcon>
