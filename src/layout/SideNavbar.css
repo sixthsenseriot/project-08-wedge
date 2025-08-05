@@ -1,7 +1,6 @@
 .SideNavbar {
     width: 250px;
     height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
+    background-color: #f7f7f7;
+    padding: 2px;
 }

@@ -18,6 +18,12 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ChangeHistoryIcon from "@mui/icons-material/ChangeHistory";
 
+import {
+    logoContainerSx,
+    logoIconSx,
+    logoTextSx,
+    navLinksSx,
+} from "./SideNavbar.styles";
 import "./SideNavbar.css";
 
 import { supabase } from "../client";
@@ -40,35 +46,15 @@ const SideNavbar = () => {
     ];
 
     return (
-        <Box
-            sx={{
-                width: 250,
-                height: "100vh",
-                backgroundColor: "#f7f7f7",
-                padding: 2,
-            }}
-        >
-            <Box
-                sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    padding: "0.8em 1em",
-                }}
-            >
-                <ChangeHistoryIcon sx={{ mr: 1, color: "#659df2" }} />
+        <div className="SideNavbar">
+            <Box sx={logoContainerSx}>
+                <ChangeHistoryIcon sx={logoIconSx} />
                 <Typography
                     variant="h6"
                     noWrap
                     component="a"
                     href="/"
-                    sx={{
-                        fontFamily: "Noto Sans",
-                        fontWeight: "bold",
-                        letterSpacing: ".05rem",
-                        color: "inherit",
-                        textDecoration: "none",
-                        fontStyle: "italic",
-                    }}
+                    sx={logoTextSx}
                 >
                     WEDGE
                 </Typography>
@@ -80,10 +66,7 @@ const SideNavbar = () => {
                         key={item.text}
                         component={Link}
                         to={item.route}
-                        sx={{
-                            textDecoration: "none",
-                            color: "inherit",
-                        }}
+                        sx={navLinksSx}
                     >
                         <ListItemIcon>{item.icon}</ListItemIcon>
                         <ListItemText primary={item.text} />
@@ -96,7 +79,7 @@ const SideNavbar = () => {
                     <ListItemText primary="Logout" />
                 </ListItem>
             </List>
-        </Box>
+        </div>
     );
 };
 
