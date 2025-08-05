@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Navbar from "./layout/Navbar";
-import HeroSection from "./components/HeroSection";
+import Navbar from "./layout/MainPageNavbar";
+import MainPage from "./pages/MainPage";
 import AuthPage from "./pages/AuthPage";
+import Profile from "./pages/Profile";
 
 import "./App.css";
 
@@ -10,10 +11,10 @@ const App = () => {
     return (
         <Router>
             <div className="App">
-                <Navbar />
                 <Routes>
-                    <Route path="/" element={<HeroSection />} />
+                    <Route path="/" element={<MainPage />} />
                     <Route path="/auth" element={<AuthPage />} />
+                    <Route path="/profile" element={<Profile />} />
                 </Routes>
             </div>
         </Router>

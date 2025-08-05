@@ -135,7 +135,7 @@ const Navbar = () => {
                                 variant="h6"
                                 noWrap
                                 component="a"
-                                href="#app-bar-with-responsive-menu"
+                                href="/"
                                 sx={{
                                     fontFamily: "Noto Sans",
                                     fontWeight: "bold",
@@ -162,8 +162,7 @@ const Navbar = () => {
                                 const route =
                                     page === "Login"
                                         ? "/auth"
-                                        : `/${page.toLowerCase()}`; // default route mapping
-
+                                        : `/${page.toLowerCase()}`;
                                 return (
                                     <Button
                                         key={page}
