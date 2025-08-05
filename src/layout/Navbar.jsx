@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,6 +13,8 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import ChangeHistoryIcon from "@mui/icons-material/ChangeHistory";
+
+import { useNavigate } from "react-router-dom";
 
 const pages = ["Search", "Explore", "Login"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -32,6 +35,8 @@ const Navbar = () => {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
+
+    const navigate = useNavigate();
 
     return (
         <AppBar position="static" color="black" elevation={0}>
@@ -153,39 +158,49 @@ const Navbar = () => {
                                 gap: 2,
                             }}
                         >
-                            {pages.map((page) => (
-                                <Button
-                                    key={page}
-                                    onClick={handleCloseNavMenu}
-                                    sx={{
-                                        my: 2,
-                                        color: "black",
-                                        display: "block",
-                                        fontFamily: "Noto Sans",
-                                        fontWeight: "bold",
-                                        textTransform: "none",
-                                        border:
-                                            page === "Login"
-                                                ? "2px solid #659df2"
-                                                : "none",
-                                        padding:
-                                            page === "Login"
-                                                ? "0.2em 1.2em"
-                                                : "",
-                                        borderRadius: "14px",
-                                        transition: "all 0.3s ease-in-out",
-                                        "&:hover":
-                                            page === "Login"
-                                                ? {
-                                                      backgroundColor:
-                                                          "#659df263",
-                                                  }
-                                                : {},
-                                    }}
-                                >
-                                    {page}
-                                </Button>
-                            ))}
+                            {pages.map((page) => {
+                                const route =
+                                    page === "Login"
+                                        ? "/auth"
+                                        : `/${page.toLowerCase()}`; // default route mapping
+
+                                return (
+                                    <Button
+                                        key={page}
+                                        onClick={() => {
+                                            handleCloseNavMenu();
+                                            navigate(route);
+                                        }}
+                                        sx={{
+                                            my: 2,
+                                            color: "black",
+                                            display: "block",
+                                            fontFamily: "Noto Sans",
+                                            fontWeight: "bold",
+                                            textTransform: "none",
+                                            border:
+                                                page === "Login"
+                                                    ? "2px solid #659df2"
+                                                    : "none",
+                                            padding:
+                                                page === "Login"
+                                                    ? "0.2em 1.2em"
+                                                    : "",
+                                            borderRadius: "14px",
+                                            transition: "all 0.3s ease-in-out",
+                                            "&:hover":
+                                                page === "Login"
+                                                    ? {
+                                                          backgroundColor:
+                                                              "#659df263",
+                                                      }
+                                                    : {},
+                                        }}
+                                    >
+                                        {page}
+                                    </Button>
+                                );
+                            })}
 
                             {/* === DESKTOP: Profile picture dropdown === */}
                             {/* <Tooltip title="Open settings">
@@ -251,7 +266,17 @@ const Navbar = () => {
                         sx={{ display: { xs: "block", md: "none" } }}
                     >
                         {pages.map((page) => (
-                            <MenuItem key={page} onClick={handleCloseNavMenu}>
+                            <MenuItem
+                                key={page}
+                                onClick={() => {
+                                    handleCloseNavMenu();
+                                    navigate(
+                                        page === "Login"
+                                            ? "/auth"
+                                            : `/${page.toLowerCase()}`
+                                    );
+                                }}
+                            >
                                 <Typography textAlign="center">
                                     {page}
                                 </Typography>
