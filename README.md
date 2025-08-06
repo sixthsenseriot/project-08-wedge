@@ -2,20 +2,28 @@
 
 Submitted by: **Khanh Nguyen**
 
-This web app: **insert description**
+**Wedge** is a social platform built for people in tech to connect, share, and learn from one another. Users can create posts to share:
 
-Time spent: **X** hours spent in total
+-   💼 Their professional experiences
+-   💻 Personal or team projects
+-   🎤 Interview experiences and tips
+-   ❓ Technical or career-related questions
+-   🚀 Show & Tell demos of their work
+
+In addition to creating content, users can also browse and view posts shared by others across these categories, making Wedge a collaborative space for career growth and knowledge sharing within the tech community.
+
+Time spent: **20** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
--   [ ] **Web app includes a create form that allows the user to create posts**
+-   [x] **Web app includes a create form that allows the user to create posts**
     -   Form requires users to add a post title
     -   Forms should have the _option_ for users to add:
         -   additional textual content
         -   an image added as an external image URL
--   [ ] **Web app includes a home feed displaying previously created posts**
+-   [x] **Web app includes a home feed displaying previously created posts**
     -   Web app must include home feed displaying previously created posts
     -   By default, each post on the posts feed should show only the post's:
         -   creation time
@@ -44,7 +52,7 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
--   [ ] Web app implements pseudo-authentication
+-   [x] Web app implements pseudo-authentication
     -   Users can only edit and delete posts or delete comments by entering the secret key, which is set by the user during post creation
     -   **or** upon launching the web app, the user is assigned a random user ID. It will be associated with all posts and comments that they make and displayed on them
     -   For both options, only the original user author of a post can update or delete it
@@ -81,7 +89,7 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+One of the main challenges I faced was being overly ambitious with the scope of the project. I had a strong vision for a feature-rich application and dove in with enthusiasm, but I underestimated how much time would be needed to build everything properly. As a result, I wasn’t able to meet all of the intended requirements within the tight deadline. While I did complete the core functionality — including creating and displaying different types of posts — there were additional features and polish I hoped to add but couldn’t due to time constraints. This experience taught me the importance of balancing ambition with realistic planning and prioritization, especially when working under a strict timeline.
 
 ## License
 
