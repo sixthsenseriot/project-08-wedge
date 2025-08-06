@@ -76,11 +76,11 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![Website Walkthrough](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzl0NXhyNGlmaTc3aHNudTBhN2tjMzRobGdxdjZ0dHF3eHFjcmFyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RNM5ZKS796SODYRikZ/giphy.gif)
 
 <!-- Replace this with whatever GIF tool you used! -->
 
-GIF created with ...
+GIF created with [LICEcap v1.32](https://www.cockos.com/licecap/)
 
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
