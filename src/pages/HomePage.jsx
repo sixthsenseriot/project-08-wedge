@@ -7,7 +7,9 @@ const HomePage = () => {
     return (
         <div className="HomePage">
             <SideNavbar />
-            <PostList />
+            <div className="post-list-container">
+                <PostList />
+            </div>
         </div>
     );
 };

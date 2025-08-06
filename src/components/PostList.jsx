@@ -49,27 +49,22 @@ const PostList = () => {
 
     return (
         <div className="post-list">
-            <h2>Experience Posts</h2>
             {experiencePosts.map((post) => (
                 <PostCard key={post.id} post={post} category="experience" />
             ))}
 
-            <h2>Project Posts</h2>
             {projectPosts.map((post) => (
                 <PostCard key={post.id} post={post} category="project" />
             ))}
 
-            <h2>Show & Tell Posts</h2>
             {showTellPosts.map((post) => (
                 <PostCard key={post.id} post={post} category="show-tell" />
             ))}
 
-            <h2>Interview Posts</h2>
             {interviewPosts.map((post) => (
                 <PostCard key={post.id} post={post} category="interview" />
             ))}
 
-            <h2>Q&A Posts</h2>
             {qaPosts.map((post) => (
                 <PostCard key={post.id} post={post} category="qa" />
             ))}
