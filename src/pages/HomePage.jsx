@@ -1,14 +1,13 @@
-import { Grid, Box, Typography } from "@mui/material";
-
 import SideNavbar from "../layout/SideNavbar";
+import PostList from "../components/PostList";
+
+import "./HomePage.css";
 
 const HomePage = () => {
     return (
         <div className="HomePage">
             <SideNavbar />
-            <Box sx={{ padding: 4 }}>
-                <Typography variant="h1">Under Construction</Typography>
-            </Box>
+            <PostList />
         </div>
     );
 };

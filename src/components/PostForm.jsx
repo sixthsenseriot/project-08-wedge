@@ -6,7 +6,7 @@ import {
     createShowTellPost,
     createInterviewPost,
     createQuestionsAnswersPost,
-} from "../api/post";
+} from "../api/create";
 
 import "./PostForm.css";
 
